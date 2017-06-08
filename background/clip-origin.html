@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="demo1"></div>
+    <div class="demo2"></div>
+    <div class="demo3"></div>
+    <div class="demo4"></div>
+</body>
+<style>
+    body div {
+        display: inline-block;
+        margin-right: 24px;
+    }
+    .demo1 {
+        width: 60px;
+        height: 60px;
+        border: 20px dashed #2196f3;
+        background-color: peru;
+        padding: 20px;
+    }
+
+    .demo2 {
+        width: 60px;
+        height: 60px;
+        border: 20px dashed #2196f3;
+        background-color: peru;
+        padding: 20px;
+        background-clip: content-box
+    }
+
+    .demo3 {
+        width: 60px;
+        height: 60px;
+        border: 20px dashed #2196f3;
+        background-image:url('http://www.qq1234.org/uploads/allimg/150602/8_150602171754_2.jpg');
+        background-repeat: no-repeat;
+        padding: 20px;
+        background-clip: content-box;
+        background-origin: padding-box;
+    }
+    .demo4 {
+        width: 60px;
+        height: 60px;
+        border: 20px dashed #2196f3;
+        background-image:url('http://www.qq1234.org/uploads/allimg/150602/8_150602171754_2.jpg');
+        background-repeat: no-repeat;
+        padding: 20px;
+        background-origin: content-box;
+        background-clip: padding-box
+    }
+</style>
+</html>
