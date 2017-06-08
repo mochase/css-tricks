@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="demo">     
+    </div>
+    <div class="demo1"></div>
+</body>
+<style>
+    body div {
+        display: inline-block;
+        margin-right: 24px;
+    }
+
+    .demo {
+        width: 100px;
+        height: 100px;
+        background-color:aqua;
+        background-image: url(./dog.jpg);
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    .demo1 {
+        width: 100px;
+        height: 100px;
+        padding: 20px;
+        border: 20px dashed antiquewhite;
+        background-image: url(./dog.jpg);
+        background-repeat: no-repeat;
+        background-clip: padding-box;
+        background-origin: content-box;
+        background-size: 140px 120px;
+        background-position: left bottom -20px;
+    }
+</style>
+</html>
