@@ -1,0 +1,57 @@
+<!--利用 background-attachment: fixed 来实现的背景固定遮罩效果-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="demo">
+        <p>this is some other collection</p>
+    </div>
+    <div class="screen-1">
+        <h4>this is the first screen</h4>
+    </div>
+    <div class="screen-2">
+        <h4>this is the secont screen</h4>
+    </div>
+    <div class="demo">
+        <p>this is some other collection</p>
+    </div>
+</body>
+<style>
+    /*background-attachment: fixed -----背景图像相对于视口固定,但只有当容器显示在视口中时背景图像才显示*/
+    div {
+        box-sizing: border-box;
+    }
+    .demo {
+        width: 100%;
+        height: 500px;
+        background-color: blanchedalmond;
+        padding: 40px;
+        z-index: -999
+    }
+    .screen-1 {
+        padding: 40px;
+        color: white;
+        height: 800px;
+        width: 100%;
+        background-image: url(./attachment-1.jpg);
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover
+    }
+    .screen-2 {
+        padding: 40px;
+        color: white;
+        height: 800px;
+        width: 100%;
+        background-image: url(./attachment-2.jpg);
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover
+    }
+</style>
+</html>
