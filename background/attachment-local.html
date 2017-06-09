@@ -1,0 +1,36 @@
+<!--ref links: https://css-tricks.com/almanac/properties/b/background-attachment/-->
+<!-- background-attachment属性 demo-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="local">
+        <div class="child"></div>
+    </div>
+    <div style="height: 1600px"></div>
+
+</body>
+<style>
+    .local {
+        width: 400px;
+        background-image: url(./dog.jpg);
+        background-repeat: no-repeat;
+        background-attachment: local;
+        height: 500px;
+        overflow-y: scroll
+    }
+    .child {
+        height: 600px;
+    }
+
+</style>
+
+</html>
