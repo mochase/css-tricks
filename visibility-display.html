@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=div, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Document</title>
 </head>
@@ -14,6 +14,7 @@
 	</div>
 	<p>hello</p>
 	<div class="menu"></div>
+	<div class="test"></div>
 </body>
 <style>
 	.foo {
@@ -38,10 +39,26 @@
 		opacity: 1;
 		visibility: visible
 	}
+
 	.menu:hover {
 		opacity: 0;
 		visibility: hidden
 	}
+
+	.test {
+		width: 100px;
+		height: 80px;
+		background-color: bisque;
+	}
 </style>
+<script>
+	var node = document.querySelector('.test')
+	node.style.display = 'none'
+	setTimeout(function () {
+		node.style.visibility = 'hidden'
+		console.log(node)
+	}, 2000)
+	// 这里测试display与visibility并没有先后顺序.(即设置display:none时是否还能设置visibility)
+</script>
 
 </html>
