@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "*.vue": "vue",
+        "*.php": "html"
+    },
+    "git.confirmSync": false,
+    "window.zoomLevel": 0,
+    "workbench.welcome.enabled": true,
+    "editor.tabSize": 4,
+    "workbench.sideBar.location": "left"
+}
