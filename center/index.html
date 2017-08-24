@@ -40,6 +40,15 @@
     <div class="demo-9">
         <span class="inline">居中</span>
     </div>
+    <div class="demo-10">
+       <p>一些填充文字, 另外一些填充文字, some
+            other text吗,另外一些填充文字</p> 
+    </div>
+    <div class="demo-11">
+        <div class="hidden"></div>
+        <span>一些填充文字, 另外一些填充文字, some
+                other text吗,另外一些填充文字</span>
+    </div>
 </body>
 <style>
     body>div {
@@ -144,6 +153,31 @@
         vertical-align: middle;
     }
     /*设置vertical-align: middle*/
+    .demo-10 {
+        height: 200px;
+        width: 200px;
+    }
+    .demo-10 > p {
+        background-color:bisque;
+        width: 120px;
+        margin-top: 50%;
+        margin-left: 50%;
+        transform: translateX(-50%) translateY(-50%)
+    }
+    .demo-11 {
+        height: 200px;
+        width: 200px;
+    }
+
+    
+    /*关于line-height, vertical-align很好的一个例子 */
+    .demo-11 .hidden {
+        display: inline;
+        line-height: 200px;
+    }
+    .demo-11 > span {
+        vertical-align: middle;
+    }
 </style>
 
 </html>
