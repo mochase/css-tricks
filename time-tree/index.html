@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="tree-list">
+        <li class="tree-item">
+          <div class="tree-item-left">
+            <span>将数据采集到关系数据库中供查询,响应速度慢</span>
+          </div>
+          <div class="tree-item-right">
+            <span>提供实时数据处理,支持实时及流式应用</span>
+          </div>
+        </li>
+        <li class="tree-item">
+          <div class="tree-item-left">
+            <span>可处理数据容量受到关系数据库限制,扩容困难</span>
+          </div>
+          <div class="tree-item-right">
+            <span>分布式采集和存储,提高系统吞吐量,方便扩容</span>
+          </div>
+        </li>
+        <li class="tree-item">
+          <div class="tree-item-left">
+            <span>无法进行实时处理及深层次数据分析</span>
+          </div>
+          <div class="tree-item-right">
+            <span>支持多维度大数据分析</span>
+          </div>
+        </li>
+      </ul>
+</body>
+<style lang="scss">
+    .tree-list {
+      padding-left: 0;
+      width: 960px;
+      margin: 0 auto;
+      list-style: none;
+      position: relative;
+      &::before {
+        display: block;
+        content: "";
+        width: 2px;
+        background-color: #e4e3e3;
+        position: absolute;
+        top: 30px;
+        bottom: 30px;
+        left: 50%;
+        margin-left: -1px
+      }
+      .tree-item {
+        margin: 20px 0;
+        &::before {
+          content: "";
+          display: table;
+        }
+        &::after {
+          clear: both;
+          content: "";
+          display: table;
+        }
+        .tree-item-left, .tree-item-right {
+          width: 450px;
+          line-height: 1.5;
+          span {
+            border-radius: 5px;
+            display: block;
+            padding: 15px 10px 10px 10px;
+            background-color: #f4f2f2;
+          }
+        }
+        .tree-item-left {
+          float: left;
+          text-align: right;
+          position: relative;
+          &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            right: -35px;
+            top: 50%;
+            margin-top: -5px;
+            width: 10px;
+            height: 10px;
+            border-radius: 100%;
+            background-color: rgb(24, 24, 204)
+          }
+          &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            right: -38px;
+            top: 50%;
+            margin-top: -8px;
+            width: 16px;
+            height: 16px;
+            border-radius: 100%;
+            background: rgba(24, 24, 204, 0.2)
+          }
+        }
+        .tree-item-right {
+          float: right;
+          text-align: left;
+        }
+      }
+    }
+</style>
+</html>
