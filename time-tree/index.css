@@ -1,0 +1,107 @@
+.comparsion {
+    padding: 100px 0 160px 0;
+    background-color: white;
+    font-size: 16px;
+    .tree-list {
+      padding-left: 0;
+      width: 960px;
+      margin: 0 auto;
+      list-style: none;
+      position: relative;
+      &::before {
+        display: block;
+        content: "";
+        width: 2px;
+        background-color: #e4e3e3;
+        position: absolute;
+        top: 30px;
+        bottom: 30px;
+        left: 50%;
+        margin-left: -1px
+      }
+      .tree-item {
+        margin: 20px 0;
+        &::before {
+          content: "";
+          display: table;
+        }
+        &::after {
+          clear: both;
+          content: "";
+          display: table;
+        }
+        .tree-item-left, .tree-item-right {
+          width: 450px;
+          line-height: 1.5;
+          span {
+            border-radius: 5px;
+            display: block;
+            padding: 15px 10px 10px 10px;
+            background-color: #f4f2f2;
+          }
+        }
+        .tree-item-left {
+          float: left;
+          text-align: right;
+          position: relative;
+          &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            right: -35px;
+            top: 50%;
+            margin-top: -5px;
+            width: 10px;
+            height: 10px;
+            border-radius: 100%;
+            background-color: rgb(24, 24, 204)
+          }
+          &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            right: -38px;
+            top: 50%;
+            margin-top: -8px;
+            width: 16px;
+            height: 16px;
+            border-radius: 100%;
+            background: rgba(24, 24, 204, 0.2)
+          }
+        }
+        .tree-item-right {
+          float: right;
+          text-align: left;
+        }
+      }
+    }
+    .tree-title {
+      width: 960px;
+      margin: 80px auto;
+      position: relative;
+      &::before {
+        content: 'vs';
+        display: table;
+        position: absolute;
+        left: 50%;
+        // top: 50%;
+        transform: translateX(-50%) translateY(10px);
+        clear: both;
+      }
+      &::after {
+        content: "";
+        display: table;
+      }
+      .tree-item-title-left {
+        float: left;
+        text-align: right;
+        width: 450px;
+      }
+      .tree-item-title-right {
+        width: 450px;
+        float: right;
+        text-align: left;
+      }
+    }
+
+  }
