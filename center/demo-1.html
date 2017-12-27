@@ -1,0 +1,52 @@
+<!-- 子元素为 inline -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="child">这是一些测试文字</div>
+    </div>
+    <p class="container">这是一些测试文字</p>
+    <div class="container-2">
+        <div class="hidden"></div>
+        <div class="child">另外一些测试文字</div>
+    </div>
+</body>
+<style>
+    /* 父元素高度固定,子元素为 inline 元素, 设置 height = line-height */
+    /* 换行即失效 */
+    .container {
+        width: 200px;
+        height: 100px;
+        line-height: 100px;
+        box-sizing: border-box;
+        border: 1px dashed #ccc;
+        text-align: center;
+    }
+    .child {
+        display: inline;
+        background: blanchedalmond;
+    }
+    /* 法二  */
+    /* 换行即失效 */
+    .container-2 {
+        width: 200px;
+        height: 100px;
+        box-sizing: border-box;
+        border: 1px dashed #ccc;
+        text-align: center;
+    }
+    .container-2 .hidden {
+        display: inline;
+        line-height: 100px;
+    }
+    .container-2 .child {
+        vertical-align: middle;
+    }
+</style>
+</html>

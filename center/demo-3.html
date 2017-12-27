@@ -1,0 +1,143 @@
+<!-- 子元素为 block -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="child-1">
+            这是一些测试文字
+        </div>
+    </div>
+    <div class="container container-2">
+        <div class="child-2">这是一些测试文字</div>
+    </div>
+    <div class="container container-3">
+        <div class="child-3">这是一些测试文字</div>
+    </div>
+    <div class="container container-4">
+        <div class="child-4">这是一些测试文字</div>
+    </div>
+    <div class="container-5">
+        <div class="child-5">
+            这是一些测试文字
+        </div>
+    </div>
+    <div class="container-5">
+        <div class="child-5-1">
+            这是另一个使用绝对定位的例子
+        </div>
+    </div>
+    <div class="container-6">
+        <div class="child-6">
+            这是一些测试文字
+        </div>
+    </div>
+    <div class="container-6 container-7">
+        <div class="child-7">这是一些测试文字</div>
+    </div>
+</body>
+<style>
+    .container {
+        width: 200px;
+        height: 100px;
+        border: 1px dashed #ccc;
+        box-sizing: border-box;
+    }
+    /* 用 margin 或 padding 填充的方法需要知道父元素的具体尺寸 */
+    /* margin 和 padding 的百分比是基于父容器的 width, 所以直接使用百分比是错误的--------- */
+    /* margin 填充 */
+    .child-1 {
+        width: 100px;
+        height: 50px;
+        margin-left: 50px;
+        margin-top: 25px;
+        background: beige;
+    }
+    /* padding 填充 */
+    .container-2 {
+        padding-left: 50px;
+        padding-top: 25px;
+    }
+    .container-2 .child-2 {
+        width: 100px;
+        height: 50px;
+        background: beige;
+    }
+    /* margin 填充 + transform, 好处是不需要知道子元素的尺寸 */
+    .container-3 .child-3 {
+        margin-top: 50px;
+        margin-left: 100px;
+        background: beige;
+        transform: translateX(-50%) translateY(-50%);
+    }
+    /* padding 填充 + transform, 同理 */
+    .container-4 {
+        padding-top: 50px;
+        padding-left: 100px;
+    }
+    .container-4 .child-4 {
+        background: beige;
+        transform: translateX(-50%) translateY(-50%);
+    }
+
+    /* 绝对定位类方法 */
+    /* 绝对定位 + transform, 父子元素的尺寸都不需要知道------- */
+    /* 绝对定位 + calc 同理, 则需要知道子元素的尺寸 */
+    /* 绝对定位 + 负 margin 同理, 需要知道子元素的尺寸 */
+    .container-5 {
+        min-width: 200px;
+        max-width: 500px;
+        min-height: 100px;
+        border: 1px dashed #ccc;
+        box-sizing: border-box;
+        position: relative;
+    }
+    .container-5 .child-5 {
+        background: beige;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%)
+    }
+    /* 绝对定位 + margin:auto, 需要子元素固定尺寸-------- */
+    .container-5 .child-5-1 {
+        width: 200px;
+        height: 60px;
+        background: beige;
+        position: absolute;
+        margin: auto;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    /* 弹性盒子类方法 */
+    .container-6 {
+        display: flex;
+        box-sizing: border-box;
+        border: 1px dashed #ccc;
+        min-width: 200px;
+        max-width: 500px;
+        min-height: 100px;
+    }
+    .container-6 .child-6 {
+        margin: auto;
+        background: beige;
+    }
+    /* 法二 */
+    .container-7 {
+        justify-content: center;
+        align-items: center;
+    }
+    .child-7 {
+        background: beige;
+    }
+
+</style>
+</html>

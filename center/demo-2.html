@@ -1,0 +1,54 @@
+<!-- 子元素为 inline-block -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="child">这是一些测试文字</div>
+    </div>
+    <div class="container-1">
+        <div class="child-1">这是一些测试文字,可以换行,试一试</div>
+    </div>
+</body>
+<style>
+    /* 子元素为 inline-block 时, 对于父容器表现为 inline-level, 使用 text-align水平居中 */
+    /* 使父容器 height = line-height;子元素 vertical-align:middle 来垂直居中 */
+    /* 比较通用,子元素高度未知 */
+
+    .container {
+        width: 200px;
+        height: 100px;
+        border: 1px dashed #ccc;
+        line-height: 100px;
+        text-align: center;
+    }
+    .child {
+        display: inline-block;
+        width: 100px;
+        line-height: initial;
+        vertical-align: middle;
+        text-align: left;
+        background: beige
+    }
+
+    /* 使用 table-cell,子元素可以换行了 */
+    .container-1 {
+        border: 1px dashed #ccc;
+        width: 200px;
+        height: 100px;
+        display: table-cell;
+        text-align: center;
+        vertical-align: middle;
+    }
+    .child-1 {
+        display: inline-block;
+        width: 140px;
+        background: beige;
+    }
+</style>
+</html>
