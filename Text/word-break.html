@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="demo">中英文混排时abcdefghijklmnopqrst</div>
+</body>
+<style>
+    .demo {
+        border: 1px solid salmon;
+        width: 140px;
+        word-break: break-all;
+    }
+    /* 情感上的认识: 相比 word-wrap, `break`得更彻底, 中英文混排时缩在一起不会超出容器*/
+    /* word-wrap: 中英文混排时, 由于英文过长,中文后会先换一行用来放置英文, 英文还是过长,结果在边界处强制换行*/
+</style>
+</html>
