@@ -1,0 +1,52 @@
+<html lang="en">
+
+<body>
+    <table>
+        <colgroup class="demo">
+            <col class="col-1" span="2">
+            <col class="col-2">
+            <col class="col-3">
+        </colgroup>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+        </tr>
+    </table>
+
+    <table>
+        <colgroup class="demo" span="2"></colgroup>
+        <tr>
+            <th>Lime</th>
+            <th>Lemon</th>
+            <th>Orange</th>
+        </tr>
+        <tr>
+            <td>Green</td>
+            <td>Yellow</td>
+            <td>Orange</td>
+        </tr>
+    </table>
+</body>
+<!-- 用 colgroup 和 col 标签,以整列为单位,为单元格设置样式;但是仅有少数样式会被列内的 th, td 继承 -->
+<!-- 测试过可以继承的包括 width, background-color -->
+<style>
+    .demo {
+        background-color: beige;
+        width: 100px;
+    }
+
+    .col-1 {
+        width: 300px;
+        background-color: aqua;
+    }
+</style>
+
+</html>
