@@ -1,0 +1,101 @@
+<!--旋转木马效果，使用3d-transform-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="stage">
+        <div class="container">
+            <div class="img-1">item1</div>
+            <div class="img-2">item2</div>
+            <div class="img-3">item3</div>
+            <div class="img-4">item4</div>
+            <div class="img-5">item5</div>
+            <div class="img-6">item6</div>
+            <div class="img-7">item7</div>
+            <div class="img-8">item8</div>
+        </div>
+    </div>
+    <style>
+        .stage {
+            width: 800px;
+            height: 100px;
+            margin-top: 100px;
+            perspective: 800px; /*保证perspective的视点在container容器的正中心，这样container旋转时观测轴心不会动*/
+            position: relative;
+        }
+        
+        .container {
+            width: 120px;
+            height: 100px;
+            margin-left: -60px;
+            position: absolute;
+            left: 50%;
+            transform-style: preserve-3d;
+            transition: transform 0.3s linear;
+        }
+        
+        .container>div {
+            width: 120px;
+            height: 80px;
+            position: absolute;
+            border: 1px solid #ccc
+        }
+        
+        .img-1 {
+            transform: rotateY(0deg) translateZ(160px);
+            background-color: #111;
+        }
+        
+        .img-2 {
+            transform: rotateY(45deg) translateZ(160px);
+            background-color: #333;
+        }
+        
+        .img-3 {
+            transform: rotateY(90deg) translateZ(160px);
+            background-color: #555;
+        }
+        
+        .img-4 {
+            transform: rotateY(135deg) translateZ(160px);
+            background-color: #777;
+        }
+        
+        .img-5 {
+            transform: rotateY(180deg) translateZ(160px);
+            background-color: #999;
+        }
+        
+        .img-6 {
+            transform: rotateY(225deg) translateZ(160px);
+            background-color: #aaa;
+        }
+        
+        .img-7 {
+            transform: rotateY(270deg) translateZ(160px);
+            background-color: #ccc;
+        }
+        
+        .img-8 {
+            transform: rotateY(315deg) translateZ(160px);
+            background-color: #fff;
+        }
+    </style>
+    <script>
+        var i= 1
+        document.querySelector('.stage').addEventListener('click', function() {
+            document.querySelector('.container').style.transform = 'rotateY(-' + 45 * i + 'deg)'
+            i ++
+        })
+    </script>
+</body>
+
+</html>
