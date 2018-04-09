@@ -56,3 +56,6 @@ font-stretch: unset;
 该属性是一个比较偏底层的功能接口，用于解决由于没有其他方法去访问和设置OpenType字体某些特性而无法解决一些特殊功能需求.
 The `font-feature-settings` CSS property gives you control over advanced typographic features in OpenType fonts.
 
+`font-variant`
+一些高级控制,更精细(可能更适合专门的字体设计师)
+The font-variant CSS property is a shorthand for the longhand properties font-variant-caps, font-variant-numeric, font-variant-alternates, font-variant-ligatures, and font-variant-east-asian
