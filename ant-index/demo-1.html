@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="content-wrapper">
+            <div class="circle"></div>
+            <div class="cp cp-circle-1"></div>
+            <div class="cp cp-circle-2"></div>
+            <div class="cp cp-circle-3"></div>
+            <div class="cp cp-circle-4"></div>
+            <div class="cp cp-circle-5"></div>
+            <div class="cp cp-circle-6"></div>
+            <div class="cp cp-circle-7"></div>
+            <div class="cp cp-rectangle-1"></div>
+            <div class="cp cp-trangle-1"></div>
+        </div>
+    </div>
+</body>
+<style>
+    .container {
+        height: 300px;
+        width: 500px;
+        display: flex;
+        background: #3350e6;
+    }
+    .content-wrapper {
+        margin: auto;
+        position: relative;
+    }
+    .circle {
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        background: #fff
+    }
+    .cp {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transition: all 0.2s ease-in-out;
+    }
+    .cp-circle-1, .cp-circle-2, .cp-circle-3, .cp-circle-4, .cp-circle-5, .cp-circle-6, .cp-circle-7 {
+        border-radius: 50%;
+    }
+</style>
+</html>

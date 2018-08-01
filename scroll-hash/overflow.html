@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="demo">
+        <div class="child">test</div>
+    </div>
+</body>
+<style>
+    .demo {
+        width: 100px;
+        height: 100px;
+        margin-top: 150px;
+        overflow-y: hidden;
+        border: 1px dashed;
+    }
+    .child {
+        height: 200px;
+        background-color: aliceblue
+    }
+</style>
+<script>
+    // 即使 overflow 值为 hidden ，这个元素依旧会滚动。
+    var node = document.querySelector('.demo')
+    setTimeout(function () {
+        node.scrollTop = 50
+        console.log(node.scrollTop)
+    }, 1000)
+</script>
+</html>
