@@ -1,0 +1,57 @@
+<!-- 无论 css 如何设置，始终能被 dom query 选中；
+visibility:hidden 依然占位；且子元素可设置 visible 来覆盖值；
+display: none 不占位 -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+
+<body>
+	<div class="foo">
+		<div class="bar">child</div>
+	</div>
+	<div class="hidden">hidden</div>
+	<div class="none">display: none</div>
+	<p>my position</p>
+</body>
+<style>
+	.foo {
+		width: 100px;
+		height: 100px;
+		border: 1px solid;
+		visibility: hidden;
+		/* display: none */
+	}
+
+	.bar {
+		width: 50px;
+		height: 50px;
+		border: 1px dashed #ccc;
+		visibility: visible
+	}
+
+	.hidden {
+		width: 100px;
+		height: 80px;
+		background-color: bisque;
+		visibility: hidden;
+	}
+	.none {
+		width: 100px;
+		height: 80px;
+		background-color: bisque;
+		display: none;
+	}
+</style>
+<script>
+	var node = document.querySelector('.hidden')
+	console.log(node)
+</script>
+
+</html>
