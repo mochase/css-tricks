@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="flex">
+        <div class="item item-1"></div>
+        <div class="item item-2"></div>
+        <div class="item item-3"></div>
+    </div>
+</body>
+</html>
+
+<script>
+    var w1 = 90 - (90 + 40 + 40 - 100) * (1 * 90) / (1 * 90 + 1 * 40 + 2 * 40)
+    console.log(w1)
+</script>
+<style>
+.flex {
+  width: 100px;
+  height: 50px;
+  display: flex;
+}
+
+.item {
+  border: 1px solid;
+  box-sizing: border-box;
+}
+
+.item-1 {
+  flex: 0 1 90px;
+}
+
+.item-2 {
+  flex: 0 1 40px;
+}
+
+.item-3 {
+  flex: 0 2 40px;
+}
+</style>
