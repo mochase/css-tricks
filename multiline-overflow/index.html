@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores voluptate, perspiciatis dolor iusto aspernatur, rem necessitatibus laboriosam quasi sapiente tenetur iure voluptas autem? Ducimus, sunt atque minus ea voluptates harum?
+    </div>
+</body>
+<style>
+    .wrapper {
+        width: 400px;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        /*! autoprefixer: off */
+        -webkit-box-orient: vertical;
+        /* autoprefixer: on */
+        overflow: hidden;
+        background: beige;
+    }
+</style>
+</html>
+
+<!-- 此方法适用webkit内核的浏览器,IE不适用 -->
+<!-- 注意: 构建工具里autoprefixer插件在处理-webkit-box-orient属性时有bug,需要临时关闭该插件 -->
