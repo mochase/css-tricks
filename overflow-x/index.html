@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="item">依然出现了滚动条</div>
+    </div>
+</body>
+<style>
+    .wrapper {
+        width: 200px;
+        height: 80px;
+        overflow-x: auto;
+        overflow-y: visible;
+        position: relative;
+        border: 1px solid;
+    }
+    .item {
+        position: absolute;
+        top: 50px;
+        left: 50px;
+        width: 80px;
+        height: 50px;
+        background: beige;
+    }
+</style>
+</html>
+<!-- overflow-x与overflow-y会互相影响,比如设置一个值为auto/scroll后, 另一个值即使手动设置为visible,依然会被渲染成auto -->
+<!-- 如果一个值为hidden,另一个值的实际效果因浏览器而异 -->
+
+<!-- 这个例子也可以看出,为什么通用组件库里的类似下拉框这种组件,绝对定位的元素要挂载在body上(而不是就近挂载)?
+避免影响父元素的布局,比如这个例子中就出现了垂直滚动条 -->
+
+<!-- http://www.w3help.org/zh-cn/causes/RV1001 -->
