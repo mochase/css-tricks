@@ -1,6 +1,9 @@
-<!-- 无论 css 如何设置，始终能被 dom query 选中；
-visibility:hidden 依然占位；且子元素可设置 visible 来覆盖值；
-display: none 不占位 -->
+<!-- 
+无论 css 如何设置，始终能被 dom query 选中;
+opacity: 0 依然占位, 可以响应事件;
+visibility:hidden 依然占位, 但是无法响应事件(故不会影响被遮挡的元素响应事件); 子元素可设置 visible 来显示;
+display: none 不占位; 子元素无法显示;
+-->
 
 <!DOCTYPE html>
 <html lang="en">

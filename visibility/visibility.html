@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="hidden">hidden</div>
+        <div class="item">item</div>
+    </div>
+</body>
+<style>
+    .wrapper {
+        width: 100px;
+        height: 100px;
+        position: relative
+    }
+    .hidden {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: beige;
+        visibility: hidden;
+    }
+    .item {
+        height: 100%;
+        background: orange;
+    }
+</style>
+<script>
+    document.querySelector('.item').addEventListener('click', (e) => {
+        // 可以触发
+        console.log(e.target)
+    })
+    document.querySelector('.hidden').addEventListener('click', (e) => {
+        // 不能触发
+        console.log(e.target)
+    })
+</script>
+</html>
