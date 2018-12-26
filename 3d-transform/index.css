@@ -1,0 +1,59 @@
+@charset "UTF-8";
+.stage {
+  width: 120px;
+  height: 80px;
+  margin-left: 400px;
+  margin-top: 200px;
+  perspective: 400px;
+  /*保证perspective的视点在container容器的正中心*/ }
+
+.container {
+  width: 120px;
+  height: 80px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.3s linear;
+  transform: translateZ(0); }
+
+.container > div {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  line-height: 80px;
+  text-align: center; }
+
+.img-1 {
+  transform: rotateY(0deg) translateZ(210px);
+  background-color: rgba(202, 155, 25, 0.6); }
+
+.img-2 {
+  transform: rotateY(45deg) translateZ(210px);
+  background-color: rgba(202, 155, 25, 0.6); }
+
+.img-3 {
+  transform: rotateY(90deg) translateZ(210px);
+  background-color: rgba(202, 155, 25, 0.6); }
+
+.img-4 {
+  transform: rotateY(135deg) translateZ(210px);
+  background-color: rgba(202, 155, 25, 0.6); }
+
+.img-5 {
+  transform: rotateY(180deg) translateZ(210px);
+  background-color: rgba(202, 155, 25, 0.6); }
+
+.img-6 {
+  transform: rotateY(225deg) translateZ(210px);
+  background-color: rgba(202, 155, 25, 0.6); }
+
+.img-7 {
+  transform: rotateY(270deg) translateZ(210px);
+  background-color: rgba(202, 155, 25, 0.6); }
+
+.img-8 {
+  transform: rotateY(315deg) translateZ(210px);
+  background-color: rgba(202, 155, 25, 0.6); }
+
+/*# sourceMappingURL=index.css.map */

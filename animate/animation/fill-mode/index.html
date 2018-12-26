@@ -1,0 +1,65 @@
+<!--  animation-fill-mode -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button>none</button>
+    <button>forwards</button>
+    <button>backwards</button>
+    <button>both</button>
+    <div class="container">none</div>
+    <div class="container">forwards</div>
+    <div class="container">backwards</div>
+    <div class="container">both</div>
+</body>
+</html>
+
+<style>
+    .container {
+        width: 100px;
+        height: 100px;
+        background: violet;
+        margin-bottom: 24px;
+    }
+
+    .animate {
+        animation: change 1s ease-in 1s;
+        animation-fill-mode: none;
+    }
+
+    @keyframes change {
+        0% {
+            margin-left: 200px;
+        }
+        100% {
+            margin-left: 400px;
+            width: 400px;
+        }
+    }
+</style>
+
+<script>
+    var btnList = Array.from(document.querySelectorAll('button'))
+    var items = Array.from(document.querySelectorAll('.container'))
+    
+    btnList[0].addEventListener('click', function () {
+        items[0].classList.add('animate')
+    })
+    btnList[1].addEventListener('click', function () {
+        items[1].classList.add('animate')
+        items[1].style.animationFillMode = 'forwards'
+    })
+    btnList[2].addEventListener('click', function () {
+        items[2].classList.add('animate')
+        items[2].style.animationFillMode = 'backwards'
+    })
+    btnList[3].addEventListener('click', function () {
+        items[3].classList.add('animate')
+        items[3].style.animationFillMode = 'both'   
+    })
+</script>
