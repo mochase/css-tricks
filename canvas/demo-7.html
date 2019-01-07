@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!-- lineJoin: 线段相交处的形状 -->
+<!-- miter, round, bevel -->
+<!-- miterLimit: 限制 miter 的最大长度--当线段的夹角很小时, miter 的长度会指数级增长 -->
+<!-- miterLimit = max miterLength / lineWidth -->
+<!-- miterLimit的默认值为10,对应线段夹角11度为临界值 -->
+<!-- miterLimit为1.414时,对应线段夹角为所有锐角 -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas width="300" height="300" id="canvas"></canvas>
+</body>
+<script>
+    var canvas = document.querySelector('#canvas')
+    if (canvas.getContext) {
+        var ctx = canvas.getContext('2d')
+        ctx.strokeStyle = '#09f';
+
+        var lineJoin = ['round', 'bevel', 'miter'];
+        for (var i = 0; i < lineJoin.length; i++) {
+            ctx.lineWidth = 10;
+            ctx.lineJoin = lineJoin[i];
+            ctx.beginPath();
+            ctx.moveTo(25, 25 + i * 40)
+            ctx.lineTo(50, 50 + i * 40)
+            ctx.lineTo(75, 25 + i * 40)
+            ctx.lineTo(100, 50 + i * 40)
+            ctx.lineTo(125, 25 + i * 40)
+            ctx.stroke();
+        }
+        ctx.miterLimit = 1.6
+        ctx.moveTo(180, 25)
+        ctx.lineTo(230, 200)
+        ctx.lineTo(280,25)
+        ctx.stroke()
+    }
+</script>
+
+</html>

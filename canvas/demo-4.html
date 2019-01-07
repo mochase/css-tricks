@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!-- 调色板12 * 12 -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas width="300" height="300" id="canvas"></canvas>
+</body>
+<script>
+    var canvas = document.querySelector('#canvas')
+    if (canvas.getContext) {
+        var ctx = canvas.getContext('2d')
+        for (var i = 0; i < 12; i++) {
+            for (var j = 0; j < 12; j++) {
+                ctx.fillStyle = 'rgb(' + Math.floor(255 - 21.25 * i) + ',' +
+                    Math.floor(255 - 21.25 * j) + ',0)';
+                ctx.fillRect(j * 25, i * 25, 25, 25);
+            }
+        }
+    }
+</script>
+
+</html>

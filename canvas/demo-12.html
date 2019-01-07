@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas width="800" height="800" id="canvas"></canvas>
+</body>
+<script>
+    var canvas = document.querySelector('#canvas')
+    if (canvas.getContext) {
+        var ctx = canvas.getContext('2d')
+        var img = new Image()
+        img.src = './wallpaper.jpg'
+        img.onload = function () {
+            ctx.drawImage(img, 600, 20, 400, 400, 2,2, 200, 200)
+        }
+    }
+</script>
+
+</html>

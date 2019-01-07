@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!-- lineGap: 线段端点的形状 -->
+<!-- butt: 无, round: 1/2线宽半圆, square: 1/2线宽矩形 -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas width="300" height="300" id="canvas"></canvas>
+</body>
+<script>
+    var canvas = document.querySelector('#canvas')
+    if (canvas.getContext) {
+        var ctx = canvas.getContext('2d')
+        ctx.strokeStyle = '#09f';
+        ctx.beginPath();
+        ctx.moveTo(10, 10);
+        ctx.lineTo(140, 10);
+        ctx.moveTo(10, 140);
+        ctx.lineTo(140, 140);
+        ctx.stroke();
+
+        var lineCap = ['butt', 'round', 'square'];
+        ctx.strokeStyle = 'black';
+        for (var i = 0; i < lineCap.length; i++) {
+            ctx.lineWidth = 10;
+            ctx.lineCap = lineCap[i];
+            ctx.beginPath();
+            ctx.moveTo(25 + i * 50, 10);
+            ctx.lineTo(25 + i * 50, 140);
+            ctx.stroke();
+        }
+    }
+</script>
+
+</html>
