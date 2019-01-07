@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+            <div class="bg"></div>
+    </div>
+    <!-- <div class="item" style="height: 800px"></div> -->
+</body>
+<style>
+html, body {
+    margin: 0;
+    padding: 0;
+}
+.bg {
+    width: 1200px;
+    height: 800px;
+    background-image: url('./demo.jpg');
+    background-attachment: fixed;
+    background-size: auto 100%;
+    overflow: hidden;
+    cursor: pointer;
+}
+.wave-wrapper {
+    position: absolute;
+}
+
+.wave {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: calc(50% - 10px);
+    left: calc(50% - 10px);
+    border-radius: 50%;
+    background: url('./demo.jpg');
+    background-attachment: fixed;
+    transform: translateZ(0);
+    opacity: 0;
+}
+.wave:nth-child(1) {
+    background-size:auto 106%;
+    animation:w 1s ease-out .1s forwards;
+}
+
+.wave:nth-child(2) {
+    background-size:auto 102%;
+    animation:w 1s ease-out .15s forwards;
+}
+.wave:nth-child(3) {
+    background-size:auto 104%;
+    animation:w 1s ease-out .25s forwards;
+}
+.wave:nth-child(4) {
+    background-size:auto 100%;
+    animation:w 1s ease-out .4s forwards;
+}
+
+@keyframes w {
+    0% {
+        width: 30px;
+        height: 30px;
+        top: calc(50% - 10px);
+        left: calc(50% - 10px);
+        opacity: 1;
+    }
+    99% {
+        opacity: 1;
+    }
+    100% {
+        width: 300px;
+        height: 300px;
+        top: calc(50% - 150px);
+        left: calc(50% - 150px);
+        opacity: 0;
+    }
+}
+</style>
+<script>
+    let index = 0
+    document.addEventListener('click', (e) => {
+        console.log(e.pageX, e.pageY)
+        wave(e.pageX, e.pageY)
+    })
+    
+    function wave (x, y) {
+        const container = document.querySelector('.bg')
+        index++
+        var el = document.createElement('div')
+        el.className = `wave-wrapper wave-wrapper-${index}`
+        el.style.left = x + 'px'
+        el.style.top = y + 'px'
+        el.innerHTML = `
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+        `
+        container.appendChild(el)
+        setTimeout(() => {
+            container.removeChild(el)
+        }, 3000)
+    }
+</script>
+</html>
