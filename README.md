@@ -13,6 +13,7 @@
 9. 内阴影按钮
 10. 径向渐变
 11. 动画
-    1.  animation
-    2.  transition
-12. 3d-transform
+    1. 水波纹
+    2. 雷达
+12.  3d-transform
+13.  canvas
