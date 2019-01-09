@@ -17,4 +17,6 @@
     2. 扫描
     3. 轨迹动画
 12.  3d-transform
-13.  canvas
+13.  `canvas`的 retina 适配问题
+14.  文字换行问题
+15.  背景问题

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <canvas></canvas>
+</body>
+<style>
+    canvas {
+        width: 300px;
+        height: 150px;
+    }
+</style>
+<script>
+    /**
+     * 默认情况下canvas会在retina屏幕上很模糊
+     * retina屏幕适配的解决方法
+     */
+
+    const canvas = document.querySelector('canvas')
+    const ctx = canvas.getContext('2d')
+    // 屏幕的设备像素比
+    let devicePixelRatio = window.devicePixelRatio || 1
+    // 浏览器在渲染canvas之前存储画布信息的像素比
+    let backingStoreRatio = ctx.webkitBackingStorePixelRatio ||
+        ctx.mozBackingStorePixelRatio ||
+        ctx.msBackingStorePixelRatio ||
+        ctx.oBackingStorePixelRatio ||
+        ctx.backingStorePixelRatio || 1
+    let ratio = devicePixelRatio / backingStoreRatio
+
+    const width = canvas.clientWidth * ratio
+    const height = canvas.clientHeight * ratio
+    canvas.width = width
+    canvas.height = height
+    ctx.scale(ratio, ratio)
+</script>
+</html>
