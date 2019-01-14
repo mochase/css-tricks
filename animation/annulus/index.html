@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <canvas width="600" height="400"></canvas>
+</body>
+<script>
+    const canvas = document.querySelector('canvas')
+    const ctx = canvas.getContext('2d')
+    const width = canvas.width
+    const height = canvas.height
+
+    ctx.moveTo(300, 200)
+    ctx.lineWidth = 20
+
+    let step = 0
+    let conf = {
+        x: 65,
+        y: 65,
+        r: 45,
+        beginAngle: - Math.PI / 2,
+        endAngle: - Math.PI / 2
+    }
+    setInterval(() => {
+        step = (step + 1) % 61
+        if (step === 0) {
+            step = 1
+        }
+        draw()
+    }, 1000)
+
+    function draw () {
+        ctx.clearRect(0, 0, width, height)
+        // 背景圆
+        ctx.beginPath()
+        ctx.strokeStyle = '#eee'
+        ctx.arc(conf.x, conf.y, conf.r, 0, Math.PI * 2)
+        ctx.stroke()
+
+        conf.endAngle = - Math.PI / 2 + step * Math.PI * 2 / 60
+        ctx.beginPath()
+        ctx.strokeStyle = '#6FEC6F'
+        ctx.arc(conf.x, conf.y, conf.r, conf.beginAngle, conf.endAngle)
+        ctx.stroke()
+
+        ctx.font = '20px sereif'
+        ctx.textAlign = 'center'
+        ctx.fillText(step + 's', 65, 75)
+    }
+
+</script>
+</html>
