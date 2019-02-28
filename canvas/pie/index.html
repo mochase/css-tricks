@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <canvas></canvas>
+</body>
+
+<style>
+canvas {
+    width: 200px;
+    height: 140px;
+    background: #2E2B3F;
+}
+</style>
+<script>
+    const data = [
+        {
+            arc: 0.1,
+            color: '#fbab99'
+        },
+        {
+            arc: 0.25,
+            color: '#7fddf8'
+        },
+        {
+            arc: 0.3,
+            color: '#7edbc1'
+        },
+        {
+            arc: 1 - 0.1 - 0.25 - 0.3,
+            color: '#c5a9ff'
+        }
+    ]
+    const canvas = document.querySelector('canvas')
+    const ctx = canvas.getContext('2d')
+    const devicePixelRatio = window.devicePixelRatio || 1
+    const clientWidth = canvas.clientWidth
+    const clientHeight = canvas.clientHeight
+    canvas.width = clientWidth * devicePixelRatio
+    canvas.height = clientHeight * devicePixelRatio
+    ctx.scale(devicePixelRatio, devicePixelRatio)
+    // start draw
+    const r = 60
+    const PI = Math.PI
+    ctx.strokeStyle = '#2E2B3F'
+    ctx.lineWidth = 4
+    const c = [clientWidth / 2, r + 10]
+    let currentA = -PI / 2
+
+    data.forEach(v => {
+        ctx.fillStyle = v.color
+        ctx.beginPath()
+        ctx.moveTo(c[0], c[1])
+        ctx.arc(c[0], c[1], r, currentA, currentA + v.arc * 2 * PI)
+        ctx.closePath()
+        ctx.fill()
+        ctx.stroke()
+        const pos = (currentA + v.arc * PI) % (Math.PI * 2)
+        const dy = r * Math.sin(pos) / 2
+        const dx = r * Math.cos(pos) / 2
+        v.d = [dx, dy]
+        currentA += v.arc * 2 * PI
+    })
+    ctx.fillStyle = '#fff'
+    ctx.textAlign = 'center'
+    data.forEach(v => {
+        if (v.arc > 0) {
+            ctx.fillText(Math.round(v.arc * 100) + '%', v.d[0] + c[0], v.d[1] + c[1])
+        }
+    })
+</script>
+</html>
