@@ -20,7 +20,8 @@
 12.  3d-transform
 13.  文字换行问题
 14.  `background`相关属性
-15.  `word-break`与`word-wrap`
-16.  canvas
+15.  `object-fit` 图片自适应
+16.  `word-break`与`word-wrap`
+17.  canvas
      1.   一个萌萌的饼图
      2.   retina 适配问题
