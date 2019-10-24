@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <img src="#" alt="">
+        <div class="slide-item-wrapper"></div>
+    </div>
+</body>
+<style>
+    .container {
+        position: relative;
+    }
+    .container .slide-item-wrapper {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .container .slide-item {
+        position: absolute;
+        background-repeat: no-repeat;
+        background-size: 500px 350px;
+    }
+    img {
+        width: 500px;
+        height: 350px;
+    }
+</style>
+<script>
+    const urls = [
+        'longjuan.jpg',
+        'girl.jpg',
+        'boy.jpg'
+    ]
+    const n = 10
+    let index = 0
+    // init
+    let url =  urls[index % urls.length]
+    const img = document.querySelector('.container img')
+    img.src = url
+
+    window.onload = function () {
+        const container = document.querySelector('.container')
+        const itemWrapper = document.querySelector('.slide-item-wrapper')
+        const width = img.offsetWidth
+        const height = img.offsetHeight
+        const itemWidth = width / n
+        const itemHeight = height / n
+        let ready = true
+        let animationTime
+        genItems(n)
+        container.addEventListener('click', () => {
+            if (!ready) return
+            ready = false
+            broken() 
+        })
+
+
+        function genItems(n) {
+            animationTime = randomNum(0.8,1.5)
+            let i = -1
+            while (++i < n * n) {
+                const item = document.createElement('div')
+                item.className = 'slide-item'
+                item.style.width = itemWidth + 'px'
+                item.style.height = itemHeight + 'px'
+                item.style.left = i % n * itemWidth + 'px'
+                item.style.top = Math.floor(i / n) * itemHeight + 'px'
+                item.style.opacity = 1
+                item.style.transition = animationTime + 's all ease'
+                const leftP = -i % n * itemWidth + 'px'
+                const topP = -Math.floor(i / n) * itemHeight + 'px'
+                item.style.backgroundImage = `url(${url})`
+                item.style.backgroundPosition = `left ${leftP} top ${topP}`
+                itemWrapper.appendChild(item)
+            }
+        }
+
+        function broken () {
+            url =  urls[++index % urls.length]
+            img.src = url
+            Array.from(document.querySelectorAll('.container .slide-item')).forEach((item, i) => {
+                item.style.opacity = 0
+                const offsetX = itemWidth * 4
+                const offsetY = itemHeight * 4 * height / width
+                item.style.left = i % n * itemWidth + offsetX + 'px'
+                item.style.top = Math.floor(i / n) * itemHeight + offsetY + 'px'
+                item.style.transform = `perspective(500px) rotateX(${randomNum(-180, 180)}deg) rotateY(${randomNum(-180, 180)}deg) rotateZ(${randomNum(-180, 180)}deg) scale(${randomNum(1.5, 3)}`
+            })
+            setTimeout(() => {
+                itemWrapper.innerHTML = ''
+                genItems(n)
+                ready = true
+            }, animationTime * 1000)
+        }
+
+        function randomNum (n, m) {
+            return Math.random() * (m - n) + n
+        }
+    }
+
+</script>
+</html>
